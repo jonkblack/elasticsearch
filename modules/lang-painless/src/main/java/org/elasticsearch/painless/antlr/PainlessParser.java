@@ -11,7 +11,7 @@ import java.util.ArrayList;
 
 @SuppressWarnings({"all", "warnings", "unchecked", "unused", "cast"})
 class PainlessParser extends Parser {
-  static { RuntimeMetaData.checkVersion("4.5.1", RuntimeMetaData.VERSION); }
+  static { RuntimeMetaData.checkVersion("4.7", RuntimeMetaData.VERSION); }
 
   protected static final DFA[] _decisionToDFA;
   protected static final PredictionContextCache _sharedContextCache =
@@ -284,6 +284,7 @@ class PainlessParser extends Parser {
       setState(83);
       match(LP);
       setState(95);
+      _errHandler.sync(this);
       _la = _input.LA(1);
       if (_la==TYPE) {
         {
@@ -579,6 +580,7 @@ class PainlessParser extends Parser {
     try {
       int _alt;
       setState(185);
+      _errHandler.sync(this);
       switch ( getInterpreter().adaptivePredict(_input,11,_ctx) ) {
       case 1:
         _localctx = new IfContext(_localctx);
@@ -595,6 +597,7 @@ class PainlessParser extends Parser {
         setState(103);
         trailer();
         setState(107);
+        _errHandler.sync(this);
         switch ( getInterpreter().adaptivePredict(_input,4,_ctx) ) {
         case 1:
           {
@@ -626,6 +629,7 @@ class PainlessParser extends Parser {
         setState(112);
         match(RP);
         setState(115);
+        _errHandler.sync(this);
         switch (_input.LA(1)) {
         case LBRACK:
         case LBRACE:
@@ -702,6 +706,7 @@ class PainlessParser extends Parser {
         setState(126);
         match(LP);
         setState(128);
+        _errHandler.sync(this);
         _la = _input.LA(1);
         if ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << LBRACE) | (1L << LP) | (1L << NEW) | (1L << BOOLNOT) | (1L << BWNOT) | (1L << ADD) | (1L << SUB) | (1L << INCR) | (1L << DECR))) != 0) || ((((_la - 72)) & ~0x3f) == 0 && ((1L << (_la - 72)) & ((1L << (OCTAL - 72)) | (1L << (HEX - 72)) | (1L << (INTEGER - 72)) | (1L << (DECIMAL - 72)) | (1L << (STRING - 72)) | (1L << (REGEX - 72)) | (1L << (TRUE - 72)) | (1L << (FALSE - 72)) | (1L << (NULL - 72)) | (1L << (TYPE - 72)) | (1L << (ID - 72)))) != 0)) {
           {
@@ -713,6 +718,7 @@ class PainlessParser extends Parser {
         setState(130);
         match(SEMICOLON);
         setState(132);
+        _errHandler.sync(this);
         _la = _input.LA(1);
         if ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << LBRACE) | (1L << LP) | (1L << NEW) | (1L << BOOLNOT) | (1L << BWNOT) | (1L << ADD) | (1L << SUB) | (1L << INCR) | (1L << DECR))) != 0) || ((((_la - 72)) & ~0x3f) == 0 && ((1L << (_la - 72)) & ((1L << (OCTAL - 72)) | (1L << (HEX - 72)) | (1L << (INTEGER - 72)) | (1L << (DECIMAL - 72)) | (1L << (STRING - 72)) | (1L << (REGEX - 72)) | (1L << (TRUE - 72)) | (1L << (FALSE - 72)) | (1L << (NULL - 72)) | (1L << (TYPE - 72)) | (1L << (ID - 72)))) != 0)) {
           {
@@ -724,6 +730,7 @@ class PainlessParser extends Parser {
         setState(134);
         match(SEMICOLON);
         setState(136);
+        _errHandler.sync(this);
         _la = _input.LA(1);
         if ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << LBRACE) | (1L << LP) | (1L << NEW) | (1L << BOOLNOT) | (1L << BWNOT) | (1L << ADD) | (1L << SUB) | (1L << INCR) | (1L << DECR))) != 0) || ((((_la - 72)) & ~0x3f) == 0 && ((1L << (_la - 72)) & ((1L << (OCTAL - 72)) | (1L << (HEX - 72)) | (1L << (INTEGER - 72)) | (1L << (DECIMAL - 72)) | (1L << (STRING - 72)) | (1L << (REGEX - 72)) | (1L << (TRUE - 72)) | (1L << (FALSE - 72)) | (1L << (NULL - 72)) | (1L << (TYPE - 72)) | (1L << (ID - 72)))) != 0)) {
           {
@@ -735,6 +742,7 @@ class PainlessParser extends Parser {
         setState(138);
         match(RP);
         setState(141);
+        _errHandler.sync(this);
         switch (_input.LA(1)) {
         case LBRACK:
         case LBRACE:
@@ -954,6 +962,7 @@ class PainlessParser extends Parser {
     enterRule(_localctx, 8, RULE_trailer);
     try {
       setState(189);
+      _errHandler.sync(this);
       switch (_input.LA(1)) {
       case LBRACK:
         enterOuterAlt(_localctx, 1);
@@ -1127,6 +1136,7 @@ class PainlessParser extends Parser {
     enterRule(_localctx, 14, RULE_initializer);
     try {
       setState(204);
+      _errHandler.sync(this);
       switch ( getInterpreter().adaptivePredict(_input,14,_ctx) ) {
       case 1:
         enterOuterAlt(_localctx, 1);
@@ -1344,6 +1354,7 @@ class PainlessParser extends Parser {
       setState(225);
       match(ID);
       setState(228);
+      _errHandler.sync(this);
       _la = _input.LA(1);
       if (_la==ASSIGN) {
         {
@@ -1443,7 +1454,10 @@ class PainlessParser extends Parser {
       _la = _input.LA(1);
       if ( !(_la==EOF || _la==SEMICOLON) ) {
       _errHandler.recoverInline(this);
-      } else {
+      }
+      else {
+        if ( _input.LA(1)==Token.EOF ) matchedEOF = true;
+        _errHandler.reportMatch(this);
         consume();
       }
       }
@@ -1653,6 +1667,7 @@ class PainlessParser extends Parser {
           _prevctx = _localctx;
           {
           setState(290);
+          _errHandler.sync(this);
           switch ( getInterpreter().adaptivePredict(_input,18,_ctx) ) {
           case 1:
             {
@@ -1664,7 +1679,10 @@ class PainlessParser extends Parser {
             _la = _input.LA(1);
             if ( !((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << MUL) | (1L << DIV) | (1L << REM))) != 0)) ) {
             _errHandler.recoverInline(this);
-            } else {
+            }
+            else {
+              if ( _input.LA(1)==Token.EOF ) matchedEOF = true;
+              _errHandler.reportMatch(this);
               consume();
             }
             setState(244);
@@ -1681,7 +1699,10 @@ class PainlessParser extends Parser {
             _la = _input.LA(1);
             if ( !(_la==ADD || _la==SUB) ) {
             _errHandler.recoverInline(this);
-            } else {
+            }
+            else {
+              if ( _input.LA(1)==Token.EOF ) matchedEOF = true;
+              _errHandler.reportMatch(this);
               consume();
             }
             setState(247);
@@ -1698,7 +1719,10 @@ class PainlessParser extends Parser {
             _la = _input.LA(1);
             if ( !(_la==FIND || _la==MATCH) ) {
             _errHandler.recoverInline(this);
-            } else {
+            }
+            else {
+              if ( _input.LA(1)==Token.EOF ) matchedEOF = true;
+              _errHandler.reportMatch(this);
               consume();
             }
             setState(250);
@@ -1715,7 +1739,10 @@ class PainlessParser extends Parser {
             _la = _input.LA(1);
             if ( !((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << LSH) | (1L << RSH) | (1L << USH))) != 0)) ) {
             _errHandler.recoverInline(this);
-            } else {
+            }
+            else {
+              if ( _input.LA(1)==Token.EOF ) matchedEOF = true;
+              _errHandler.reportMatch(this);
               consume();
             }
             setState(253);
@@ -1732,7 +1759,10 @@ class PainlessParser extends Parser {
             _la = _input.LA(1);
             if ( !((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << LT) | (1L << LTE) | (1L << GT) | (1L << GTE))) != 0)) ) {
             _errHandler.recoverInline(this);
-            } else {
+            }
+            else {
+              if ( _input.LA(1)==Token.EOF ) matchedEOF = true;
+              _errHandler.reportMatch(this);
               consume();
             }
             setState(256);
@@ -1749,7 +1779,10 @@ class PainlessParser extends Parser {
             _la = _input.LA(1);
             if ( !((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << EQ) | (1L << EQR) | (1L << NE) | (1L << NER))) != 0)) ) {
             _errHandler.recoverInline(this);
-            } else {
+            }
+            else {
+              if ( _input.LA(1)==Token.EOF ) matchedEOF = true;
+              _errHandler.reportMatch(this);
               consume();
             }
             setState(259);
@@ -1854,7 +1887,10 @@ class PainlessParser extends Parser {
             _la = _input.LA(1);
             if ( !(((((_la - 60)) & ~0x3f) == 0 && ((1L << (_la - 60)) & ((1L << (ASSIGN - 60)) | (1L << (AADD - 60)) | (1L << (ASUB - 60)) | (1L << (AMUL - 60)) | (1L << (ADIV - 60)) | (1L << (AREM - 60)) | (1L << (AAND - 60)) | (1L << (AXOR - 60)) | (1L << (AOR - 60)) | (1L << (ALSH - 60)) | (1L << (ARSH - 60)) | (1L << (AUSH - 60)))) != 0)) ) {
             _errHandler.recoverInline(this);
-            } else {
+            }
+            else {
+              if ( _input.LA(1)==Token.EOF ) matchedEOF = true;
+              _errHandler.reportMatch(this);
               consume();
             }
             setState(286);
@@ -1979,6 +2015,7 @@ class PainlessParser extends Parser {
     int _la;
     try {
       setState(308);
+      _errHandler.sync(this);
       switch ( getInterpreter().adaptivePredict(_input,20,_ctx) ) {
       case 1:
         _localctx = new PreContext(_localctx);
@@ -1988,7 +2025,10 @@ class PainlessParser extends Parser {
         _la = _input.LA(1);
         if ( !(_la==INCR || _la==DECR) ) {
         _errHandler.recoverInline(this);
-        } else {
+        }
+        else {
+          if ( _input.LA(1)==Token.EOF ) matchedEOF = true;
+          _errHandler.reportMatch(this);
           consume();
         }
         setState(296);
@@ -2005,7 +2045,10 @@ class PainlessParser extends Parser {
         _la = _input.LA(1);
         if ( !(_la==INCR || _la==DECR) ) {
         _errHandler.recoverInline(this);
-        } else {
+        }
+        else {
+          if ( _input.LA(1)==Token.EOF ) matchedEOF = true;
+          _errHandler.reportMatch(this);
           consume();
         }
         }
@@ -2026,7 +2069,10 @@ class PainlessParser extends Parser {
         _la = _input.LA(1);
         if ( !((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << BOOLNOT) | (1L << BWNOT) | (1L << ADD) | (1L << SUB))) != 0)) ) {
         _errHandler.recoverInline(this);
-        } else {
+        }
+        else {
+          if ( _input.LA(1)==Token.EOF ) matchedEOF = true;
+          _errHandler.reportMatch(this);
           consume();
         }
         setState(302);
@@ -2126,6 +2172,7 @@ class PainlessParser extends Parser {
     try {
       int _alt;
       setState(326);
+      _errHandler.sync(this);
       switch ( getInterpreter().adaptivePredict(_input,23,_ctx) ) {
       case 1:
         _localctx = new DynamicContext(_localctx);
@@ -2342,6 +2389,7 @@ class PainlessParser extends Parser {
     int _la;
     try {
       setState(346);
+      _errHandler.sync(this);
       switch ( getInterpreter().adaptivePredict(_input,24,_ctx) ) {
       case 1:
         _localctx = new PrecedenceContext(_localctx);
@@ -2363,7 +2411,10 @@ class PainlessParser extends Parser {
         _la = _input.LA(1);
         if ( !(((((_la - 72)) & ~0x3f) == 0 && ((1L << (_la - 72)) & ((1L << (OCTAL - 72)) | (1L << (HEX - 72)) | (1L << (INTEGER - 72)) | (1L << (DECIMAL - 72)))) != 0)) ) {
         _errHandler.recoverInline(this);
-        } else {
+        }
+        else {
+          if ( _input.LA(1)==Token.EOF ) matchedEOF = true;
+          _errHandler.reportMatch(this);
           consume();
         }
         }
@@ -2493,6 +2544,7 @@ class PainlessParser extends Parser {
     enterRule(_localctx, 36, RULE_postfix);
     try {
       setState(351);
+      _errHandler.sync(this);
       switch ( getInterpreter().adaptivePredict(_input,25,_ctx) ) {
       case 1:
         enterOuterAlt(_localctx, 1);
@@ -2551,6 +2603,7 @@ class PainlessParser extends Parser {
     enterRule(_localctx, 38, RULE_postdot);
     try {
       setState(355);
+      _errHandler.sync(this);
       switch ( getInterpreter().adaptivePredict(_input,26,_ctx) ) {
       case 1:
         enterOuterAlt(_localctx, 1);
@@ -2608,7 +2661,10 @@ class PainlessParser extends Parser {
       _la = _input.LA(1);
       if ( !(_la==DOT || _la==NSDOT) ) {
       _errHandler.recoverInline(this);
-      } else {
+      }
+      else {
+        if ( _input.LA(1)==Token.EOF ) matchedEOF = true;
+        _errHandler.reportMatch(this);
         consume();
       }
       setState(358);
@@ -2655,14 +2711,20 @@ class PainlessParser extends Parser {
       _la = _input.LA(1);
       if ( !(_la==DOT || _la==NSDOT) ) {
       _errHandler.recoverInline(this);
-      } else {
+      }
+      else {
+        if ( _input.LA(1)==Token.EOF ) matchedEOF = true;
+        _errHandler.reportMatch(this);
         consume();
       }
       setState(362);
       _la = _input.LA(1);
       if ( !(_la==DOTINTEGER || _la==DOTID) ) {
       _errHandler.recoverInline(this);
-      } else {
+      }
+      else {
+        if ( _input.LA(1)==Token.EOF ) matchedEOF = true;
+        _errHandler.reportMatch(this);
         consume();
       }
       }
@@ -2803,6 +2865,7 @@ class PainlessParser extends Parser {
     try {
       int _alt;
       setState(412);
+      _errHandler.sync(this);
       switch ( getInterpreter().adaptivePredict(_input,34,_ctx) ) {
       case 1:
         _localctx = new NewstandardarrayContext(_localctx);
@@ -2837,6 +2900,7 @@ class PainlessParser extends Parser {
           _alt = getInterpreter().adaptivePredict(_input,27,_ctx);
         } while ( _alt!=2 && _alt!=org.antlr.v4.runtime.atn.ATN.INVALID_ALT_NUMBER );
         setState(385);
+        _errHandler.sync(this);
         switch ( getInterpreter().adaptivePredict(_input,29,_ctx) ) {
         case 1:
           {
@@ -2878,6 +2942,7 @@ class PainlessParser extends Parser {
         setState(391);
         match(LBRACK);
         setState(400);
+        _errHandler.sync(this);
         _la = _input.LA(1);
         if ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << LBRACE) | (1L << LP) | (1L << NEW) | (1L << BOOLNOT) | (1L << BWNOT) | (1L << ADD) | (1L << SUB) | (1L << INCR) | (1L << DECR))) != 0) || ((((_la - 72)) & ~0x3f) == 0 && ((1L << (_la - 72)) & ((1L << (OCTAL - 72)) | (1L << (HEX - 72)) | (1L << (INTEGER - 72)) | (1L << (DECIMAL - 72)) | (1L << (STRING - 72)) | (1L << (REGEX - 72)) | (1L << (TRUE - 72)) | (1L << (FALSE - 72)) | (1L << (NULL - 72)) | (1L << (TYPE - 72)) | (1L << (ID - 72)))) != 0)) {
           {
@@ -2903,6 +2968,7 @@ class PainlessParser extends Parser {
         }
 
         setState(403);
+        _errHandler.sync(this);
         _la = _input.LA(1);
         if (_la==SEMICOLON) {
           {
@@ -2974,6 +3040,7 @@ class PainlessParser extends Parser {
     int _la;
     try {
       setState(427);
+      _errHandler.sync(this);
       switch ( getInterpreter().adaptivePredict(_input,36,_ctx) ) {
       case 1:
         enterOuterAlt(_localctx, 1);
@@ -3055,6 +3122,7 @@ class PainlessParser extends Parser {
     int _la;
     try {
       setState(443);
+      _errHandler.sync(this);
       switch ( getInterpreter().adaptivePredict(_input,38,_ctx) ) {
       case 1:
         enterOuterAlt(_localctx, 1);
@@ -3186,6 +3254,7 @@ class PainlessParser extends Parser {
       setState(449);
       match(LP);
       setState(458);
+      _errHandler.sync(this);
       _la = _input.LA(1);
       if ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << LBRACE) | (1L << LP) | (1L << NEW) | (1L << THIS) | (1L << BOOLNOT) | (1L << BWNOT) | (1L << ADD) | (1L << SUB) | (1L << INCR) | (1L << DECR))) != 0) || ((((_la - 72)) & ~0x3f) == 0 && ((1L << (_la - 72)) & ((1L << (OCTAL - 72)) | (1L << (HEX - 72)) | (1L << (INTEGER - 72)) | (1L << (DECIMAL - 72)) | (1L << (STRING - 72)) | (1L << (REGEX - 72)) | (1L << (TRUE - 72)) | (1L << (FALSE - 72)) | (1L << (NULL - 72)) | (1L << (TYPE - 72)) | (1L << (ID - 72)))) != 0)) {
         {
@@ -3252,6 +3321,7 @@ class PainlessParser extends Parser {
     enterRule(_localctx, 56, RULE_argument);
     try {
       setState(465);
+      _errHandler.sync(this);
       switch ( getInterpreter().adaptivePredict(_input,41,_ctx) ) {
       case 1:
         enterOuterAlt(_localctx, 1);
@@ -3326,6 +3396,7 @@ class PainlessParser extends Parser {
       enterOuterAlt(_localctx, 1);
       {
       setState(480);
+      _errHandler.sync(this);
       switch (_input.LA(1)) {
       case TYPE:
       case ID:
@@ -3339,6 +3410,7 @@ class PainlessParser extends Parser {
         setState(468);
         match(LP);
         setState(477);
+        _errHandler.sync(this);
         _la = _input.LA(1);
         if (_la==TYPE || _la==ID) {
           {
@@ -3373,6 +3445,7 @@ class PainlessParser extends Parser {
       setState(482);
       match(ARROW);
       setState(485);
+      _errHandler.sync(this);
       switch (_input.LA(1)) {
       case LBRACK:
         {
@@ -3445,6 +3518,7 @@ class PainlessParser extends Parser {
       enterOuterAlt(_localctx, 1);
       {
       setState(488);
+      _errHandler.sync(this);
       _la = _input.LA(1);
       if (_la==TYPE) {
         {
@@ -3533,6 +3607,7 @@ class PainlessParser extends Parser {
     enterRule(_localctx, 62, RULE_funcref);
     try {
       setState(505);
+      _errHandler.sync(this);
       switch ( getInterpreter().adaptivePredict(_input,47,_ctx) ) {
       case 1:
         _localctx = new ClassfuncrefContext(_localctx);
@@ -3648,7 +3723,7 @@ class PainlessParser extends Parser {
   }
 
   public static final String _serializedATN =
-    "\3\u0430\ud6d1\u8206\uad2d\u4417\uaef1\u8d80\uaadd\3V\u01fe\4\2\t\2\4"+
+    "\3\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964\3V\u01fe\4\2\t\2\4"+
     "\3\t\3\4\4\t\4\4\5\t\5\4\6\t\6\4\7\t\7\4\b\t\b\4\t\t\t\4\n\t\n\4\13\t"+
     "\13\4\f\t\f\4\r\t\r\4\16\t\16\4\17\t\17\4\20\t\20\4\21\t\21\4\22\t\22"+
     "\4\23\t\23\4\24\t\24\4\25\t\25\4\26\t\26\4\27\t\27\4\30\t\30\4\31\t\31"+
@@ -3689,11 +3764,11 @@ class PainlessParser extends Parser {
     "\37\5\37\u01e8\n\37\3 \5 \u01eb\n \3 \3 \3!\3!\3!\3!\3!\3!\3!\3!\3!\3"+
     "!\3!\3!\3!\5!\u01fc\n!\3!\2\3\36\"\2\4\6\b\n\f\16\20\22\24\26\30\32\34"+
     "\36 \"$&(*,.\60\62\64\668:<>@\2\17\3\3\16\16\3\2 \"\3\2#$\3\2:;\3\2%\'"+
-    "\3\2(+\3\2,/\3\2>I\3\2<=\4\2\36\37#$\3\2JM\3\2\13\f\3\2UV\u0237\2E\3\2"+
-    "\2\2\4P\3\2\2\2\6U\3\2\2\2\b\u00bb\3\2\2\2\n\u00bf\3\2\2\2\f\u00c1\3\2"+
-    "\2\2\16\u00ca\3\2\2\2\20\u00ce\3\2\2\2\22\u00d0\3\2\2\2\24\u00d2\3\2\2"+
-    "\2\26\u00db\3\2\2\2\30\u00e3\3\2\2\2\32\u00e8\3\2\2\2\34\u00ef\3\2\2\2"+
-    "\36\u00f1\3\2\2\2 \u0136\3\2\2\2\"\u0148\3\2\2\2$\u015c\3\2\2\2&\u0161"+
+    "\3\2(+\3\2,/\3\2>I\3\2<=\4\2\36\37#$\3\2JM\3\2\13\f\3\2UV\2\u0237\2E\3"+
+    "\2\2\2\4P\3\2\2\2\6U\3\2\2\2\b\u00bb\3\2\2\2\n\u00bf\3\2\2\2\f\u00c1\3"+
+    "\2\2\2\16\u00ca\3\2\2\2\20\u00ce\3\2\2\2\22\u00d0\3\2\2\2\24\u00d2\3\2"+
+    "\2\2\26\u00db\3\2\2\2\30\u00e3\3\2\2\2\32\u00e8\3\2\2\2\34\u00ef\3\2\2"+
+    "\2\36\u00f1\3\2\2\2 \u0136\3\2\2\2\"\u0148\3\2\2\2$\u015c\3\2\2\2&\u0161"+
     "\3\2\2\2(\u0165\3\2\2\2*\u0167\3\2\2\2,\u016b\3\2\2\2.\u016e\3\2\2\2\60"+
     "\u019e\3\2\2\2\62\u01ad\3\2\2\2\64\u01bd\3\2\2\2\66\u01bf\3\2\2\28\u01c3"+
     "\3\2\2\2:\u01d3\3\2\2\2<\u01e2\3\2\2\2>\u01ea\3\2\2\2@\u01fb\3\2\2\2B"+
